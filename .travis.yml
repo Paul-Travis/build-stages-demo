@@ -6,7 +6,9 @@ rvm:
 jobs:
   include:
     - stage: unit tests
+      name: "Docker: Trusty py/36" 
       script: echo one
+      env: 'EXTENDED_TEST=\"yes\" CONFIG_OPTS=\"--debug --coverage no-asm enable-rc5 enable-ec_nistp_64_gcc_128 enable-ssl3 enable-ssl3-method enable-nextprotoneg enable-weak-ssl-ciphers no-shared-DPENDANTIC'
     - stage: unit tests
       script: echo two
     - stage: deploy to staging
